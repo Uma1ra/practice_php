@@ -1,6 +1,9 @@
 <?php
-$file = "hello.txt";
-$handle = fopen($file, "r"); // ファイルポインタを変数に代入
+$file = "heloo.txt";
+$handle = @fopen($file, "r"); // ファイルポインタを変数に代入
+if ($handle === false) {
+    die("can't open file");
+}
 
 $line = fgets($handle); // ファイルポインタを渡す
 echo $line;
