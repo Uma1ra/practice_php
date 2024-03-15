@@ -10,7 +10,9 @@ $file = "score.csv";
 $handle = fopen($file, "w");
 
 foreach ($scores as $value) {
-    $line = implode(",", $value); // 配列を文字列に変換してあげる
-    fwrite($handle, $line . PHP_EOL); // 引数として配列はNG、文字列に変換したものを書き込む
+    // $line = implode(",", $value); // 配列を文字列に変換してあげる
+    // fwrite($handle, $line . PHP_EOL); // 引数として配列はNG、文字列に変換したものを書き込む
+
+    fputcsv($handle, $value);
 }
 fclose($handle);
