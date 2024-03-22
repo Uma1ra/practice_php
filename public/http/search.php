@@ -23,9 +23,10 @@ if ($name !== "") {
     <hr>
     <ul>
         <?php
-        for ($i = 0; $i < count($searched_names); $i++) {
+        foreach ($searched_names as $key => $value) {
+        // for ($i = 0; $i < count($searched_names); $i++) {
         ?>
-        <li><?php echo $searched_names[$i]; ?></li>
+        <li><?php echo $searched_names[$key]; ?></li>
         <?php    
         }
         ?>
