@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    if (!isset($_SESSION["id"])) { // アドレスバーからのアクセス防止（セッションidがない場合リダイレクト）
+        header("Location: login.html");
+        return; // ここでプログラムが終わるようになってる
+    }
+
     $id = $_SESSION["id"];
     $time = $_SESSION["time"];
 ?>
@@ -15,7 +21,7 @@
     <h3>Menu - Hello <?php echo $id; ?></h3>
     <hr>Login at <?php echo $time; ?>
     <ul>
-        <li>ToDo</li>
+        <li><a href="logout.php">logout</a></li>
     </ul>
 </body>
 </html>
