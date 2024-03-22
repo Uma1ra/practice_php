@@ -4,7 +4,9 @@ $password = $_POST["password"];
 $message = "NG";
 
 if ($id === "Andy" && $password === "secret") {
-    $message ="OK";
+    header("Location: menu.php");
+} else {
+    header("Location: login.html");
 }
 ?>
 
