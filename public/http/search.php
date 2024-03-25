@@ -1,5 +1,7 @@
 <?php
-$name = $_GET["name"];
+// $name = $_GET["name"];
+$name = (string)filter_input(INPUT_GET, "name");
+// 入力をチェックし、空文字に置き換えるような処理
 $names = file("names.txt", FILE_IGNORE_NEW_LINES);
 
 $searched_names = [];
