@@ -64,7 +64,7 @@ function redirect_with_message($page, $message)
     }
     $message = urlencode($message);
     header("Location: " . $page
-                        . "?message=${message}");
+                        . "?message=$message");
     exit();
 }
 
